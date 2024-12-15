@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lớp 12C2</title>
+    <!-- Thêm Font Awesome để sử dụng các biểu tượng -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://via.placeholder.com/1920x1080'); /* URL ảnh nền */
+            background-size: cover; /* Ảnh bao phủ toàn bộ màn hình */
+            background-position: center; /* Căn giữa ảnh nền */
+            background-attachment: fixed; /* Ảnh nền cố định khi cuộn */
+            color: white; /* Đổi màu chữ để phù hợp với nền */
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.5); /* Lớp nền mờ để dễ đọc chữ */
+            color: pink;
+            text-align: center;
+            padding: 40px 0; /* Khoảng cách padding */
+        }
+        header img {
+            width: 150px; /* Điều chỉnh kích thước ảnh trên tiêu đề */
+            margin-bottom: 20px; /* Khoảng cách dưới ảnh */
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: rgba(255, 255, 255, 0.8); /* Màu nền trắng, trong suốt nhẹ */
+            padding: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        nav .home-icon {
+            font-size: 24px;
+            color: #333;
+            margin-right: 10px; /* Khoảng cách giữa biểu tượng và văn bản */
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        .left-panel, .right-panel {
+            background: rgba(255, 255, 255, 0.9); /* Lớp nền mờ cho nội dung */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            color: #333; /* Màu chữ bên trong các panel */
+        }
+        .left-panel select, button {
+            width: 100%;
+            margin: 5px 0;
+            padding: 10px;
+        }
+        .video-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Lớp nền mờ cho footer */
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .logo img {
+            width: 100px;
+            margin: 10px 0;
+        }@media screen and (max-width: 480px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .main {
+                margin-left: 0;
+            }
+
+            .sidebar a {
+                font-size: 18px;
+                padding: 12px;
+            }
+        }
+    </style>
+<style>
+    /* Style cho button của dropdown */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropbtn {
+        background-color: #EEEEEE;
+        color: black;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        margin: 0; /* Đảm bảo không có khoảng cách dư thừa */
+    }
+
+    /* Style cho menu dropdown */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        padding: 0; /* Loại bỏ padding dư thừa */
+    }
+
+    /* Style cho các item trong dropdown */
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        margin: 0; /* Loại bỏ margin dư thừa */
+    }
+
+    /* Hiển thị các item trong dropdown khi hover */
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    /* Hiển thị menu khi hover vào dropdown */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Chào mừng đến với lớp 12C2</h1>
+    </header>
+    
+   <nav>
+    <!-- Thêm biểu tượng ngôi nhà và liên kết về trang chủ -->
+<a href="index.html"><i class="fa fa-home home-icon"></i></a>
+
+<!-- Dropdown giới thiệu -->
+<div class="dropdown">
+    <a href="file:///C:/Users/Administrator/Documents/tin/gioithieu.html">GIỚI THIỆU</a>
+</div>
+
+    <!-- Tạo dropdown cho phần TỔ -->
+    <div class="dropdown">
+        <button class="dropbtn"><strong>TỔ</strong></button>
+        <div class="dropdown-content">
+            <a href="file:///C:/Users/Administrator/Documents/tin/TỔ1.html">Tổ 1</a>
+            <a href="file:///C:/Users/Administrator/Documents/tin/TỔ%202.html">Tổ 2</a>
+            <a href="file:///C:/Users/Administrator/Documents/tin/Tổ%203.html">Tổ 3</a>
+            <a href="file:///C:/Users/Administrator/Documents/tin/TỔ%204.html">Tổ 4</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn"><strong>HỌC TẬP</strong></button>
+        <div class="dropdown-content">
+            <a href="file:///C:/Users/Administrator/Documents/tin/Thời%20khoá%20biểu%20học%20chính.html">Thời khoá biểu học chính</a>
+            <a href="file:///C:/Users/Administrator/Documents/tin/thời%20khoá%20biểu%20tốt%20nghiệp.html">Thời khoá biểu học tốt nghiệp</a>
+            <a href="anhhoctap.jpg">Tổng kết năm học 2023-2024</a>
+        </div>
+    </div>
+    <div class="dropdown">
+    <button class="dropbtn"><strong>LIÊN HỆ</strong></button>
+    <div class="dropdown-content">
+        <!-- Khi hover vào đây sẽ hiển thị số điện thoại GVCN -->
+        <a href="#" id="gvcn" class="contact-info">Thông tin GVCN</a>
+        <!-- Khi hover vào đây sẽ hiển thị thông tin lớp C2 -->
+        <a href="#" id="classC2" class="contact-info">Thông tin C2</a>
+        <!-- Phần hiển thị số điện thoại GVCN -->
+        <div id="phone-info-gvcn" class="info-box" style="display: none;">
+            <p>Số điện thoại GVCN: <a href="tel:+84985303831">0985303831</a></p>
+        </div>
+        <!-- Phần hiển thị thông tin lớp C2 -->
+        <div id="info-classC2" class="info-box" style="display: none;">
+            <p>Số điện thoại:<a href="tel:+84798271733">0798271733</a></p>
+            <p>Email: <a href="mailto:lopc2@gmail.com">12C2thptxuantho@gmail.com</a></p>
+            <p>Địa chỉ:<a href="address:phongso4,thptxuantho"> phòng số 4,trường THPT Xuân Thọ></a></p>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Căn chỉnh dropdown cơ bản */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        padding: 10px;
+    }
+
+    /* Hiển thị dropdown-content khi hover vào dropdown */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* Căn chỉnh hộp thông tin (số điện thoại GVCN, thông tin lớp C2) */
+    .info-box {
+        position: absolute;
+        left: 100%; /* Hiển thị kế bên */
+        top: 0;
+        background-color: #f1f1f1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        white-space: nowrap;
+    }
+
+    /* Hiển thị thông tin GVCN khi hover vào "Thông tin GVCN" */
+    #gvcn:hover + #phone-info-gvcn {
+        display: block;
+    }
+
+    /* Hiển thị thông tin lớp C2 khi hover vào "Thông tin C2" */
+    #classC2:hover + #info-classC2 {
+        display: block;
+    }
+
+    /* Giữ hộp thông tin hiển thị khi hover vào chính nó */
+    .info-box:hover {
+        display: block;
+    }
+</style>
+
+<script>
+    // Lấy các phần tử tương ứng
+    const gvcnLink = document.getElementById('gvcn');
+    const classC2Link = document.getElementById('classC2');
+    const phoneInfoGvcn = document.getElementById('phone-info-gvcn');
+    const infoClassC2 = document.getElementById('info-classC2');
+
+    // Hiển thị thông tin GVCN khi hover
+    gvcnLink.addEventListener('mouseover', () => {
+        phoneInfoGvcn.style.display = 'block';
+    });
+
+    gvcnLink.addEventListener('mouseout', () => {
+        setTimeout(() => {
+            if (!phoneInfoGvcn.matches(':hover')) {
+                phoneInfoGvcn.style.display = 'none';
+            }
+        }, 100);
+    });
+
+    phoneInfoGvcn.addEventListener('mouseover', () => {
+        phoneInfoGvcn.style.display = 'block';
+    });
+
+    phoneInfoGvcn.addEventListener('mouseout', () => {
+        phoneInfoGvcn.style.display = 'none';
+    });
+
+    // Hiển thị thông tin lớp C2 khi hover
+    classC2Link.addEventListener('mouseover', () => {
+        infoClassC2.style.display = 'block';
+    });
+
+    classC2Link.addEventListener('mouseout', () => {
+        setTimeout(() => {
+            if (!infoClassC2.matches(':hover')) {
+                infoClassC2.style.display = 'none';
+            }
+        }, 100);
+    });
+
+    infoClassC2.addEventListener('mouseover', () => {
+        infoClassC2.style.display = 'block';
+    });
+
+    infoClassC2.addEventListener('mouseout', () => {
+        infoClassC2.style.display = 'none';
+    });
+</script>
+
+    <div class="dropdown">
+        <button class="dropbtn"><strong>THƯ VIỆN</strong></button>
+        <div class="dropdown-content">
+            <a href="file:///C:/Users/Administrator/Documents/tin/Thư%20viện.html">HÌNH ẢNH CỦA LỚP</a>
+        </div>
+    </div>
+
+
+    <!-- Thẻ select cho phần HỌC TẬP -->
+</nav>
+    <div class="container">
+        <!-- Left Panel -->
+        <div class="left-panel">
+            <h3>Menu</h3>
+            <!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu thành viên nhóm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Định dạng chữ "THÀNH VIÊN" */
+        #show-members {
+            font-size: 20px;
+            color: #0066cc;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+        }
+
+        #show-members:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Định dạng bảng thành viên */
+        #team-members {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .team-member {
+            background-color: #fff;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px); /* Hiệu ứng hover */
+        }
+
+        .team-member h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Cải thiện kiểu dáng của tiêu đề */
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            color: #444;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Chữ "THÀNH VIÊN" sẽ hiển thị và người dùng có thể bấm vào để hiện bảng -->
+        <div id="show-members" onclick="showMembers()">THÀNH VIÊN</div>
+
+        <!-- Bảng thành viên sẽ hiển thị sau khi bấm vào "THÀNH VIÊN" -->
+        <div id="team-members">
+            <h1>Thành viên nhóm</h1>
+
+            <div class="team-member">
+                <h3>1. Nguyễn Thị Phương Trang</h3>
+            </div>
+
+            <div class="team-member">
+                <h3>2. Hoàng Anh Thư</h3>
+            </div>
+
+            <div class="team-member">
+                <h3>3. Nguyễn Ngọc Anh</h3>
+            </div>
+            <div class="team-member">
+                <h3>4. Phạm Thu Ngân</h3>
+            </div>
+            <div class="team-member">
+                <h3>5. Võ Thị Phương</h3>
+            </div>
+            <div class="team-member">
+                <h3>6. Nguyễn Trần Hạnh Vy</h3>
+            </div>
+            <div class="team-member">
+                <h3>7. Đặng Quốc Vỹ</h3>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hàm hiển thị bảng thành viên khi bấm vào "THÀNH VIÊN"
+        function showMembers() {
+            const membersDiv = document.getElementById('team-members');
+
+            // Nếu bảng chưa được hiển thị, sẽ hiển thị bảng
+            if (membersDiv.style.display === 'none' || membersDiv.style.display === '') {
+                membersDiv.style.display = 'block';
+            } else {
+                membersDiv.style.display = 'none'; // Nếu bảng đã hiển thị, sẽ ẩn bảng
+            }
+        }
+    </script>
+</body>
+</html>
+
+           <!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thành Tích</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Định dạng chữ "THÀNH TÍCH" */
+        #show-achievements {
+            font-size: 20px;
+            color: #0066cc;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+        }
+
+        #show-achievements:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Định dạng bảng thành tích */
+        #achievement-list {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .achievement {
+            background-color: #fff;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .achievement:hover {
+            transform: translateY(-5px); /* Hiệu ứng hover */
+        }
+
+        .achievement h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Hạng màu đặc biệt */
+        .first {
+            background-color: gold;
+        }
+
+        .second {
+            background-color: silver;
+        }
+
+        .third {
+            background-color: #cd7f32;
+        }
+
+        /* Cải thiện kiểu dáng của tiêu đề */
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            color: #444;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Chữ "THÀNH TÍCH" sẽ hiển thị và người dùng có thể bấm vào để hiện bảng -->
+        <div id="show-achievements" onclick="toggleAchievements()">THÀNH TÍCH</div>
+
+        <!-- Danh sách thành tích sẽ hiển thị sau khi bấm vào "THÀNH TÍCH" -->
+        <div id="achievement-list">
+            <h1>Danh sách thành tích</h1>
+
+            <div class="achievement first">
+                <h3>1. Ngô Hoàng Mỹ Ngọc - 37,3 điểm</h3>
+            </div>
+
+            <div class="achievement second">
+                <h3>2. Nguyễn Ngọc Thanh Hòa - 37,1 điểm</h3>
+            </div>
+
+            <div class="achievement third">
+                <h3>3. Trương Ngọc Như Ý - 36,6 điểm</h3>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hàm hiển thị bảng thành tích khi bấm vào "THÀNH TÍCH"
+        function toggleAchievements() {
+            const achievementsDiv = document.getElementById('achievement-list');
+
+            // Nếu bảng chưa được hiển thị, sẽ hiển thị bảng
+            if (achievementsDiv.style.display === 'none' || achievementsDiv.style.display === '') {
+                achievementsDiv.style.display = 'block';
+            } else {
+                achievementsDiv.style.display = 'none'; // Nếu bảng đã hiển thị, sẽ ẩn bảng
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+            <!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hạnh Kiểm</title>
+    <style>
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        #hanhkiem-table {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học Lực</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        #show-grades {
+            font-size: 20px;
+            color: #0066cc;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+        }
+
+        #show-grades:hover {
+            background-color: #e0e0e0;
+        }
+
+        #grades-list {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .grade {
+            background-color: #fff;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .grade:hover {
+            transform: translateY(-5px);
+        }
+
+        .grade h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            color: #444;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Chữ "HỌC LỰC" sẽ hiển thị và người dùng có thể bấm vào để hiện bảng -->
+        <div id="show-grades" onclick="toggleGrades()">HỌC LỰC</div>
+
+        <!-- Danh sách học lực sẽ hiển thị sau khi bấm vào "HỌC LỰC" -->
+        <div id="grades-list">
+            <h1>Danh sách học lực</h1>
+
+            <div class="grade">
+                <h3>Xuất sắc: <span id="excellent-count">3</span> học sinh (<span id="excellent-percent">7.14%</span>)</h3>
+            </div>
+
+            <div class="grade">
+                <h3>Tốt: <span id="good-count">16</span> học sinh (<span id="good-percent">38.10%</span>)</h3>
+            </div>
+
+            <div class="grade">
+                <h3>Đạt: <span id="average-count">21</span> học sinh (<span id="average-percent">50%</span>)</h3>
+            </div>
+
+            <div class="grade">
+                <h3>Chưa đạt: <span id="poor-count">0</span> học sinh (<span id="poor-percent">0%</span>)</h3>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleGrades() {
+            const gradesDiv = document.getElementById('grades-list');
+
+            if (gradesDiv.style.display === 'none' || gradesDiv.style.display === '') {
+                gradesDiv.style.display = 'block';
+            } else {
+                gradesDiv.style.display = 'none';
+            }
+        }
+
+        function updatePercent() {
+            const excellent = parseInt(document.getElementById('excellent-count').innerText) || 0;
+            const good = parseInt(document.getElementById('good-count').innerText) || 0;
+            const average = parseInt(document.getElementById('average-count').innerText) || 0;
+            const poor = parseInt(document.getElementById('poor-count').innerText) || 0;
+
+            const total = excellent + good + average + poor;
+
+            if (total > 0) {
+                document.getElementById('excellent-percent').innerText = ((excellent / total) * 100).toFixed(2) + '%';
+                document.getElementById('good-percent').innerText = ((good / total) * 100).toFixed(2) + '%';
+                document.getElementById('average-percent').innerText = ((average / total) * 100).toFixed(2) + '%';
+                document.getElementById('poor-percent').innerText = ((poor / total) * 100).toFixed(2) + '%';
+            } else {
+                document.getElementById('excellent-percent').innerText = '0%';
+                document.getElementById('good-percent').innerText = '0%';
+                document.getElementById('average-percent').innerText = '0%';
+                document.getElementById('poor-percent').innerText = '0%';
+            }
+        }
+
+        // Tính toán phần trăm ban đầu khi tải trang
+        updatePercent();
+    </script>
+</body>
+</html>
+
+            
+        <div class="logo">
+         <a href="https://vnedu.vn" target="_blank">
+        <img src="vnedu.jpg" alt="VNEDU" width="28" height="40">
+         </a>
+        </div>
+        <div class="logo">
+         <a href="https://azota.vn" target="_blank">
+        <img src="azota.jpg" alt="AZOTA" width="28" height="40">
+         </a>
+        </div>
+        <div class="logo">
+         <a href="https://moet.gov.vn/" target="_blank">
+        <img src="BỘ GIÁO DỤC.jpg" alt="BỘ GIÁO DỤC" width="28" height="40">
+         </a>
+        </div>
+        <div class="logo">
+         <a href="https://xuanloc.dongnai.gov.vn/" target="_blank">
+        <img src="uyban.jpg" alt="Uỷ Ban Nhân Dân" width="15" height="30">
+         </a>
+        </div>
+
+
+
+        </div>
+          <div class="container">
+        <!-- Left Panel -->
+        <div class="left-panel">
+            <select>
+                <option value="">Danh sách học sinh đạt thành tích cao của học kì 1</option>
+            </select>
+            <select>
+                <option value="">Danh sách thi đấu bóng chuyền nam 12c2....</option>
+            </select>
+            <select>
+                <option value="">Danh sách thi đấu bóng chuyền nữ 12c2....</option>
+            </select>
+            <select>
+                <option value="">Kế hoạch sinh hoạt lớp trong giờ ra chơi...</option>
+            </select>
+            <select>
+                <option value="">Hoạt động vào các ngày dịp lễ bằng cách...</option>
+            </select>
+            
+        </div>
+
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <h3>Video</h3>
+            <div class="video-section">
+                <p>C2 cùng cô chủ nhiệm ngày 20-11</p><video controls width="100%">
+                    <source src="video1.mp4" type="video/mp4">
+                </video>
+                <p>20/11 cùng cô</p>
+                <video controls width="100%">
+                    <source src="video2.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+    <!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh tìm kiếm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Thanh tìm kiếm -->
+    <div class="search-bar">
+        <div class="search-container">
+            <input type="text" placeholder="Tìm kiếm..." id="searchInput">
+            <button id="searchButton">🔍</button>
+        </div>
+    </div>
+</body>
+</html>
+    <!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer cố định</title>
+    <style>
+        /* Đảm bảo toàn bộ trang chiếm 100% chiều cao màn hình */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh; /* Chiều cao tối thiểu là 100% của viewport */
+            display: flex;
+            flex-direction: column; /* Xếp chồng các phần tử theo cột */
+        }
+
+        /* Nội dung trang (header, main, v.v.) */
+        main {
+            flex: 1; /* Đẩy footer xuống cuối màn hình */
+            padding: 20px;
+        }
+
+        /* Phần footer cố định ở cuối */
+        footer {
+            background-color: #f1f1f1; /* Màu nền */
+            text-align: center; /* Canh giữa nội dung */
+            padding: 10px 0;
+            position: fixed; /* Vị trí cố định */
+            bottom: 0; /* Sát mép dưới */
+            left: 0; /* Căn lề trái */
+            width: 100%; /* Chiếm toàn bộ chiều ngang */
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+        }
+
+        /* Tùy chọn: kiểu chữ cho văn bản */
+        footer p {
+            margin: 0;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Lớp 12C2 | Thiết kế bởi 12C2</p>
+    </footer>
+</body>
+</html>
+
+</body>
+</html>
